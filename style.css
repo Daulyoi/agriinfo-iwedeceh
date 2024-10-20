@@ -27,7 +27,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #462a43;
+  background-color: #72456e;
   width: 100%;
   padding: 2rem 0;
 }
@@ -189,29 +189,34 @@ main {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .activities-card img{
-  width: 100%;
-  height: auto;
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
 .activities-cardcontent{
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0.5;
+  position: absolute;
+  bottom: -100%;  /* Start off the visible area */
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+  opacity: 0;  /* Start as invisible */
 }
 
-.activities-cardcontent:hover {
-  transform: translateY(-150%);
-  opacity: 1;
+.activities-card:hover .activities-cardcontent {
+  transform: translateY(-500%);
+  opacity: 1;  /* Make visible when hovered */
 }
 
 .activities-card:hover {
-  transform: translateY(-100%);
-  opacity: 1;
   transform: scale(1.05);
 }
 
@@ -220,16 +225,60 @@ main {
   font-weight: 700;
 }
 
-#activities p {
-  font-size: 2rem;
-  font-weight: 500;
+.activities-card p:nth-child(1) {
+  font-size: 1.5rem;
+  font-weight: 700;
   color: #333;
   text-align: center;
-  position: absolute;
-  bottom: 0;
   background-color: rgba(255, 255, 255, 0.9);
   width: 100%;
   padding: 10px;
-  box-sizing: border-box;
-  transition: transform 0.3s ease;
+}
+
+.activities-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  padding: 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #72456e;
+  width: 100%;
+  padding: 2rem 32rem;
+}
+
+footer p {
+  color: #ebe8e8;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.logo{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.logo img{
+  width: 30px;
+  height: 30px;
+  fill: #e0e4ea;
+}
+
+.logo .contact-us {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.logo .contact-us p {
+  font-size: 1rem;
 }
