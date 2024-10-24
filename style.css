@@ -247,7 +247,7 @@ main {
 
 footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: #72456e;
   width: 100%;
@@ -267,8 +267,8 @@ footer p {
 }
 
 .logo img{
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   fill: #e0e4ea;
 }
 
@@ -277,6 +277,7 @@ footer p {
   flex-direction: row;
   gap: 8px;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .logo .contact-us p {
